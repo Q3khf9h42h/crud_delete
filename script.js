@@ -3,15 +3,15 @@ var appointments = JSON.parse(localStorage.getItem('appointments')) || [];
 
 // Function to save appointments to local storage
 function saveAppointments() {
-    const data= axios.get("https://crudcrud.com/api/dcddf69ffaca44f78941aed68e4c589a/appointmentData")
-    .then((response)=>{
-        console.log(response)
-        addAppointment(response.data[i])
-    })
-    .catch((error) =>{
-        console.log(error)
-    })
-    console.log(data)
+    // const data= axios.get("https://crudcrud.com/api/dcddf69ffaca44f78941aed68e4c589a/appointmentdata")
+    //  .then((response)=>{
+    //      console.log(response)
+    //      addAppointment(response.data[i])
+    //  })
+    //  .catch((error) =>{
+    //      console.log(error)
+    //  })
+    //  console.log(data)
     localStorage.setItem('appointments', JSON.stringify(appointments));
 }
 
@@ -30,6 +30,15 @@ function addAppointment() {
         email: email,
         phone: phone
     };
+    //axios.post("https://crudcrud.com/api/dcddf69ffaca44f78941aed68e4c589a/appointmentdata",appointment)
+     //.then((response)=>{
+    //     console.log(response)
+    //     addAppointment(response.data[i])
+    // })
+    // .catch((error) =>{
+    //     console.log(error)
+    // })
+    // console.log(data)
     
 
     appointments.push(appointment);
@@ -44,15 +53,15 @@ function addAppointment() {
 
 // Function to delete an appointment
 function deleteAppointment(index) {
-    const data= axios.delete("https://crudcrud.com/api/dcddf69ffaca44f78941aed68e4c589a/appointmentData")
-    .then((response)=>{
-        console.log(response)
-        addAppointment(response.data[i])
-    })
-    .catch((error) =>{
-        console.log(error)
-    })
-    console.log(data)
+    //  const data= axios.delete("https://crudcrud.com/api/dcddf69ffaca44f78941aed68e4c589a/appointmentdata")
+    //   .then((response)=>{
+    //       console.log(response)
+    //       addAppointment(response.data[i])
+    //   })
+    //   .catch((error) =>{
+    //      console.log(error)
+    //  })
+    //   console.log(data)
     
     appointments.splice(index, 1);
     saveAppointments();
@@ -61,6 +70,15 @@ function deleteAppointment(index) {
 
 // Function to edit an appointment
 function editAppointment(index) {
+    const data= axios.put("https://crudcrud.com/api/dcddf69ffaca44f78941aed68e4c589a/appointmentdata")
+     .then((response)=>{
+         console.log(response)
+         addAppointment(response.data[i])
+      })
+      .catch((error) =>{
+      console.log(error)
+     })
+      console.log(data)
     var appointment = appointments[index];
 
     var nameInput = document.getElementById('name');
