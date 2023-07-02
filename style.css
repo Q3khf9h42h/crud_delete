@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#booking-form {
+    margin-bottom: 20px;
+}
+
+#appointment-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+#appointments li {
+    margin-bottom: 10px;
+}
+
+.action-buttons button {
+    margin-right: 5px;
+}
